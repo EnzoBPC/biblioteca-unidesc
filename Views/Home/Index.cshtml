@@ -1,0 +1,19 @@
+﻿@model List<biblioteca.Models.Livro>
+
+<h1>Biblioteca Unidesc</h1>
+
+@if (Model != null && Model.Any())
+{
+    <ul>
+        @foreach (var livro in Model)
+        {
+            <li>@livro.Titulo - @livro.Autor</li>
+        }
+    </ul>
+}
+else
+{
+    <div class="alert alert-info mt-4">
+        Nenhum livro foi carregado do banco de dados ainda
+    </div>
+}
